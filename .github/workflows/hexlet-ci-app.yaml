@@ -1,4 +1,4 @@
-#name: hexlet-ci-app
+name: workflow
 on: push
 jobs:
   build:
