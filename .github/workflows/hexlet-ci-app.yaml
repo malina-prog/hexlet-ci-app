@@ -1,11 +1,19 @@
 name: workflow
-on: push
-jobs:
+on:  
+  push:
+    branches:
+      - main   
+
+jobs: 
   build:
-    runs-on: ubuntu-latest
-    steps: # список шагов, которые надо выполнить
-      # экшен — выполняет какую-то задачу
-      # checkout — клонирует репозиторий
-      - run: make setup
-      - run: make test
-      - run: make lint
+    runs-on: ubuntu-latest  
+
+    steps:
+      - name: Install dependencies
+        run: make setup
+
+      - name: Run tests
+        run: make test
+
+      - name: Run linter
+        run: make lint
