@@ -1,8 +1,8 @@
 name: workflow
 on:  
   push:
-    branches:
-      - main   
+    - push
+    - pull_request   
 
 jobs: 
   build:
@@ -18,3 +18,5 @@ jobs:
       - run: make test
 
       - run: make lint
+
+      - uses: hexlet-components/hello-from-hexlet-action@release
